@@ -12,4 +12,22 @@
         <mail>gaie1234@scs.ubbcluj.ro</mail>
         <profesor>Lovin Andrei</profesor>
     </Student>
+    <Student idStudent="3">
+        <nume>Morea Razvan</nume>
+        <grupa>935</grupa>
+        <mail>mrie2365@scs.ubbcluj.ro</mail>
+        <profesor>Muresan Bogdan</profesor>
+    </Student>
+    <Student idStudent="4">
+        <nume>Stefania Nicoara</nume>
+        <grupa>935</grupa>
+        <mail>nsie2376@scs.ubbcluj.ro</mail>
+        <profesor>Munteanu Diana</profesor>
+    </Student>
+    <Student idStudent="5">
+        <nume>Munteanu Diana</nume>
+        <grupa>935</grupa>
+        <mail>maie2367@scs.ubbcluj.ro</mail>
+        <profesor>Nicoara Stefania</profesor>
+    </Student>
 </inbox>
