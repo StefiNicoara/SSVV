@@ -34,4 +34,11 @@ public class AppTest
         assertEquals(student.getMail(), studentRepo.save(student).getMail());
         assertEquals(student.getProfesor(), studentRepo.save(student).getProfesor());
     }
+
+    @Test
+    public void testAddStudentNotUniqueId() {
+        StudentRepo studentRepo = new StudentRepo(new StudentValidator(),"C:\\Users\\Diana\\Facultate\\Year3\\SSVV\\Lab2\\Maven project\\SSVV\\src\\main\\java\\MaxPointsParticipantsMV\\studenti.xml");
+        Student student = new Student("1","Munteanu Diana", 935, "maie2367@scs.ubbcluj.ro", "Nicoara Stefania");
+        assertNotNull(studentRepo.save(student));
+    }
 }
