@@ -42,16 +42,15 @@ public class AppTest
     @Test
     public void testAddAssignmentNotUniqueId() {
         TemeRepo temeRepo = new TemeRepo(new TemeValidator(),"C:\\Users\\Diana\\Facultate\\Year3\\SSVV\\Lab2\\Maven project\\SSVV\\src\\main\\java\\MaxPointsParticipantsMV\\teme.xml");
-        Teme tema = new Teme(1,"Munteanu Diana", 7, 4);
+        Teme tema = new Teme(1,"Suma a+b", 10, 10);
         assertNotNull(temeRepo.save(tema));
     }
 
     @Test
     public void testAddAssignmentSameIdNotOverwrited() {
         TemeRepo temeRepo = new TemeRepo(new TemeValidator(),"C:\\Users\\Diana\\Facultate\\Year3\\SSVV\\Lab2\\Maven project\\SSVV\\src\\main\\java\\MaxPointsParticipantsMV\\teme.xml");
-        Teme tema = new Teme(1,"Munteanu Diana", 7, 4);
+        Teme tema = new Teme(1,"Bubblesort", 4, 7);
         temeRepo.save(tema);
-        assertNotEquals(tema.getID(), temeRepo.findOne(tema.getID()).getID());
         assertNotEquals(tema.getDescriere(), temeRepo.findOne(tema.getID()).getDescriere());
         assertNotEquals(tema.getDeadline(), temeRepo.findOne(tema.getID()).getDeadline());
         assertNotEquals(tema.getSapt_primire(), temeRepo.findOne(tema.getID()).getSapt_primire());
