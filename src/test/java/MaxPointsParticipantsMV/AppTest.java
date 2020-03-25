@@ -41,4 +41,15 @@ public class AppTest
         Student student = new Student("1","Munteanu Diana", 935, "maie2367@scs.ubbcluj.ro", "Nicoara Stefania");
         assertNotNull(studentRepo.save(student));
     }
+
+    @Test
+    public void testAddStudentSameIdNotOverrides() {
+        StudentRepo studentRepo = new StudentRepo(new StudentValidator(),"C:\\Users\\Diana\\Facultate\\Year3\\SSVV\\Lab2\\Maven project\\SSVV\\src\\main\\java\\MaxPointsParticipantsMV\\studenti.xml");
+        Student student = new Student("1","Munteanu Diana", 935, "maie2367@scs.ubbcluj.ro", "Nicoara Stefania");
+        studentRepo.save(student);
+        assertNotEquals(student.getNume(), studentRepo.findOne(student.getID()).getNume());
+        assertNotEquals(student.getGrupa(), studentRepo.findOne(student.getID()).getGrupa());
+        assertNotEquals(student.getMail(), studentRepo.findOne(student.getID()).getMail());
+        assertNotEquals(student.getProfesor(), studentRepo.findOne(student.getID()).getProfesor());
+    }
 }
