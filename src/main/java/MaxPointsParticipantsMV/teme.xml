@@ -15,4 +15,14 @@
         <deadline>12</deadline>
         <sapt_primire>12</sapt_primire>
     </Tema>
+    <Tema nr="4">
+        <descriere>Bubblesort</descriere>
+        <deadline>4</deadline>
+        <sapt_primire>2</sapt_primire>
+    </Tema>
+    <Tema nr="5">
+        <descriere>sdfg</descriere>
+        <deadline>4</deadline>
+        <sapt_primire>4</sapt_primire>
+    </Tema>
 </Teme>

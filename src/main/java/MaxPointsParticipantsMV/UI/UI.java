@@ -27,7 +27,7 @@ public class UI {
         this.serv=serv;
         this.sv=sv;
     }
-    public void show() throws IOException {
+    public void show() throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         while(true) {
             System.out.print("Meniu: ");
@@ -55,16 +55,24 @@ public class UI {
                     String nume = br.readLine();
                     System.out.println("Grupa: ");
                     String g = br.readLine();
-                    int gr = Integer.parseInt(g);
+                    int gr = 0;
+                    try{
+                        gr = Integer.parseInt(g);
+                    }
+                    catch(Exception e)
+                    {
+                        System.out.println(e.getMessage());
+                    }
                     System.out.println("Email: ");
                     String em = br.readLine();
                     System.out.println("Profesor: ");
                     String prof = br.readLine();
-                    // if(srv.find(id)==null) {
-                    Student stud = new Student(id, nume, gr, em, prof);
-                    srv.add(stud);
-                    //}
-                    //else System.out.println("ID deja existent");
+                    if(srv.find(id) != null)
+                        System.out.println("ID has to be unique!");
+                    else {
+                        Student stud = new Student(id, nume, gr, em, prof);
+                        srv.add(stud);
+                    }
                 }catch(ValidationException ex){
                     System.out.println(ex);
                 }
@@ -73,20 +81,41 @@ public class UI {
                 try {
                     System.out.println("Numar: ");
                     String num = br.readLine();
-                    int nr = Integer.parseInt(num);
+                    int nr = 0;
+                    try{
+                        nr = Integer.parseInt(num);
+                    }
+                    catch(Exception e)
+                    {
+                        System.out.println(e.getMessage());
+                    }
                     System.out.println("Descriere: ");
                     String desc = br.readLine();
                     System.out.println("Saptamana primire: ");
                     String sp = br.readLine();
-                    int sapt = Integer.parseInt(sp);
+                    int sapt = 0;
+                    try{
+                        sapt = Integer.parseInt(sp);
+                    }
+                    catch(Exception e)
+                    {
+                        System.out.println(e.getMessage());
+                    }
                     System.out.println("Deadline: ");
                     String dl = br.readLine();
-                    int d = Integer.parseInt(dl);
-                    //if(serv.find(nr)==null) {
-                    Teme tema = new Teme(nr, desc, sapt, d);
-                    serv.add(tema);
-                    //}
-                    //else System.out.println("ID deja existent");
+                    int d = 0;
+                    try{
+                        d = Integer.parseInt(dl);
+                    }
+                    catch(Exception e)
+                    {
+                        System.out.println(e.getMessage());
+                    }
+                    if(serv.find(nr) == null) {
+                        Teme tema = new Teme(nr, desc, sapt, d);
+                        serv.add(tema);
+                    }
+                    else System.out.println("ID must be unique!");
                 }catch(ValidationException ex){
                     System.out.println(ex);
                 }
