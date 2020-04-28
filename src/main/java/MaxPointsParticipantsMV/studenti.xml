@@ -30,10 +30,4 @@
         <mail>maie2367@scs.ubbcluj.ro</mail>
         <profesor>Nicoara Stefania</profesor>
     </Student>
-    <Student idStudent="6">
-        <nume>Pascu Maria</nume>
-        <grupa>932</grupa>
-        <mail>pmie2378@scs.ubbcluj.ro</mail>
-        <profesor>Gabi Mircea</profesor>
-    </Student>
 </inbox>
