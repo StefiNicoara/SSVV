@@ -293,4 +293,21 @@ public class AppTest
         testAddAssignmentNotUniqueId();
         testAddGrade();
     }
+
+    @Test
+    public void integrationTestingAddStudent() {
+        testAddStudentSuccess();
+    }
+
+    @Test
+    public void integrationTestingAddAssignment() {
+        integrationTestingAddStudent();
+        testAddAssignmentSuccessful();
+    }
+
+    @Test
+    public void integrationTestingAddGrade() {
+        integrationTestingAddAssignment();
+        testAddGrade();
+    }
 }
